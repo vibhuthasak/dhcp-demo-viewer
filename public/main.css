@@ -2,7 +2,6 @@
   font-family: monospace, monospace; }
 
 .src-client-App__container--1mf54 {
-  max-width: 600px;
   margin: 50px auto; }
 
 .src-client-App__loader--20hrs {
@@ -14,6 +13,17 @@
   display: flex;
   flex-direction: column; }
 
+.src-client-App__clientBox--2npR4 {
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  align-items: center; }
+
+.src-client-App__messageBox--3kyQ0 {
+  border: 1px #cccccc solid;
+  margin: 5px;
+  padding: 5px; }
+
 .src-client-App__message--fgtEB {
   padding: 5px 10px;
   background: #d6d6d6;
@@ -21,7 +31,8 @@
   border-radius: 2px;
   font-family: monospace, monospace;
   display: block;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  margin: 5px; }
 
 .src-client-App__index--2t_WH {
   margin-top: 10px; }

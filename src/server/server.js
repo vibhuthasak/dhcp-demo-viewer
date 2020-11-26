@@ -4,7 +4,7 @@ import socketIo from "socket.io"
 import app from "./app"
 import { watchDHCP } from "./emitters"
 
-const client = dhcp.createClient({ mac: "20-16-B9-48-C5-01" });
+const client = dhcp.createClient({ mac: "f0:18:98:87:57:3b" });
 client.listen();
 client.sendDiscover();
 
@@ -13,7 +13,6 @@ const server = http.createServer(app)
 
 const io = socketIo(server);
 io.on("connection", socket => {
-    // console.log(socket, client)
     watchDHCP(socket, client)
     socket.on("disconnect", () => {
         console.log("Client disconnected");
