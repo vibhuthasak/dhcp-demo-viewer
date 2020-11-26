@@ -1,0 +1,39 @@
+* {
+  font-family: monospace, monospace; }
+
+.src-client-App__container--1mf54 {
+  max-width: 600px;
+  margin: 50px auto; }
+
+.src-client-App__loader--20hrs {
+  text-align: center;
+  margin: 10px 25px; }
+
+.src-client-App__queueHolder--3MfvC {
+  padding: 20px;
+  display: flex;
+  flex-direction: column; }
+
+.src-client-App__message--fgtEB {
+  padding: 5px 10px;
+  background: #d6d6d6;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  font-family: monospace, monospace;
+  display: block;
+  word-wrap: break-word; }
+
+.src-client-App__index--2t_WH {
+  margin-top: 10px; }
+
+body pre, body code {
+  font-family: monospace, monospace; }
+
+body pre {
+  overflow: auto; }
+
+body pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal; }
+
