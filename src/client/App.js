@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import styles from "./App.sass"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltRight, faLongArrowAltLeft} from '@fortawesome/free-solid-svg-icons'
 
 class App extends Component {
     constructor() {
@@ -27,16 +29,21 @@ class App extends Component {
         const { messages } = this.state;
         return messages.map((message, index) => {
             let DHCPCode = "";
+            let arrowDirection = "";
             try {
                 const obj = JSON.parse(message)
                 DHCPCode = obj.DHCPCode
+                arrowDirection = obj.arrowDirection
             }
             catch (e) {
 
             }
             return (
-                <div key={index} className="">
+                <div key={index} className={styles.messageBox}>
                     <div className={styles.index}>{index+1} : { DHCPCode }</div>
+                    <div style={{display: 'flex', justifyContent: 'center', fontSize: '2rem', background: 'crimson', margin: '5px'}}>
+                        <ArrowComponent direction={arrowDirection}/>
+                    </div>
                     <div className={styles.message}>{ message }</div>
                 </div>
             )
@@ -51,7 +58,7 @@ class App extends Component {
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <div className={styles.clientBox} style={{background: "#5e69ec"}}>
                         <div>
-                            Client
+                            DHCP CLIENT
                         </div>
                     </div>
                     <div className={styles.queueHolder} style={{maxWidth: "50%"}}>
@@ -59,7 +66,7 @@ class App extends Component {
                     </div>
                     <div className={styles.clientBox} style={{background: "#43e81a"}}>
                         <div>
-                            Server
+                            DHCP SERVER
                         </div>
                     </div>
                 </div>
@@ -67,4 +74,15 @@ class App extends Component {
         );
     }
 }
+
+function ArrowComponent(props) {
+    if(props.direction === "left"){
+        return <FontAwesomeIcon icon={faLongArrowAltLeft} />
+    } else if (arrowDirection === "right") {
+        return <FontAwesomeIcon icon={faLongArrowAltRight} />
+    } else {
+        return ""
+    }
+}
+
 export default App;
