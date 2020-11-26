@@ -25,7 +25,7 @@ class App extends Component {
 
     get messageQueue() {
         const { messages } = this.state;
-        return messages.reverse().map((message, index) => {
+        return messages.map((message, index) => {
             let DHCPCode = "";
             try {
                 const obj = JSON.parse(message)
@@ -36,7 +36,7 @@ class App extends Component {
             }
             return (
                 <div key={index} className="">
-                    <div className={styles.index}>{ messages.length - (index + 1) } : { DHCPCode }</div>
+                    <div className={styles.index}>{index+1} : { DHCPCode }</div>
                     <div className={styles.message}>{ message }</div>
                 </div>
             )
@@ -47,9 +47,21 @@ class App extends Component {
         const { messages } = this.state;
         return (
             <div className={styles.container}>
-                { !messages.length ? <p className={styles.loader}>Loading...</p> : null }
-                <div className={styles.queueHolder}>
-                    { messages.length ? this.messageQueue : null }
+                { !messages.length ? <p className={styles.loader}>No DHCP messages to display</p> : null }
+                <div style={{display: "flex", justifyContent: "center"}}>
+                    <div className={styles.clientBox} style={{background: "#5e69ec"}}>
+                        <div>
+                            Client
+                        </div>
+                    </div>
+                    <div className={styles.queueHolder} style={{maxWidth: "50%"}}>
+                        { messages.length ? this.messageQueue : null }
+                    </div>
+                    <div className={styles.clientBox} style={{background: "#43e81a"}}>
+                        <div>
+                            Server
+                        </div>
+                    </div>
                 </div>
             </div>
         );
