@@ -2,7 +2,6 @@
   font-family: monospace, monospace; }
 
 .src-client-App__container--1mf54 {
-  max-width: 600px;
   margin: 50px auto; }
 
 .src-client-App__loader--20hrs {
@@ -13,6 +12,12 @@
   padding: 20px;
   display: flex;
   flex-direction: column; }
+
+.src-client-App__clientBox--2npR4 {
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  align-items: center; }
 
 .src-client-App__message--fgtEB {
   padding: 5px 10px;
